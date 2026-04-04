@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Heebo } from "next/font/google";
+import localFont from "next/font/local";
+// When deploying with internet access, switch to:
+// import { Heebo } from "next/font/google";
+// const heebo = Heebo({ subsets: ["hebrew", "latin"], variable: "--font-heebo" });
 import "./globals.css";
 
-const heebo = Heebo({
-  subsets: ["hebrew", "latin"],
+const heebo = localFont({
+  src: "./fonts/GeistVF.woff",
   variable: "--font-heebo",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
